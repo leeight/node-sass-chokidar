@@ -222,6 +222,9 @@
 }
 
 function passesRegex(options, file) {
+  if (file.indexOf('node_modules') !== -1) {
+    return false;
+  }
   if (options.matchRegex) {
     var fileName = file.split('/');
     fileName = fileName[fileName.length - 1];
